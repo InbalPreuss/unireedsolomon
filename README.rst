@@ -15,6 +15,8 @@ Documented Universal Errors-and-erasures Reed Solomon Codec written in pure Pyth
 
 A pure-Python universal Reed-Solomon error correction codec with documented code and mathematical nomenclatura, compatible with Python 2.6 up to 3.4 and also PyPy 2 and 3.
 
+Compatible also with Python 3.7 and 3.8 but requires installing Cython even if not used (this will be fixed in the future).
+
 Quickstart
 ----------
 >>> import unireedsolomon as rs
