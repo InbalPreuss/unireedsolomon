@@ -13,12 +13,25 @@ Documented Universal Errors-and-erasures Reed Solomon Codec written in pure Pyth
 .. image:: https://img.shields.io/pypi/dm/unireedsolomon.svg
     :target: https://pypi.python.org/pypi/unireedsolomon
 
-Written from scratch by Andrew Brown <brownan@gmail.com> <brownan@cs.duke.edu>
-(c) 2010.
-Upgraded by Stephen Larroque <LRQ3000@gmail.com> in 2015.
+A pure-Python universal Reed-Solomon error correction codec with documented code and mathematical nomenclatura, compatible with Python 2.6 up to 3.4 and also PyPy 2 and 3.
 
-Licensed under the MIT License.
+Quickstart
+----------
+>>> import unireedsolomon as rs
+>>> coder = rs.RSCoder(20,13)
+>>> c = coder.encode("Hello, world!")
+>>> print repr(c)
+'Hello, world!\x8d\x13\xf4\xf9C\x10\xe5'
+>>>
+>>> r = "\0"*3 + c[3:]
+>>> print repr(r)
+'\x00\x00\x00lo, world!\x8d\x13\xf4\xf9C\x10\xe5'
+>>>
+>>> coder.decode(r)
+'Hello, world!'
 
+Description
+-----------
 This library implements a pure-Python documented universal Reed-Solomon
 error correction codec with a mathematical nomenclatura, compatible with
 Python 2.6 up to 3.4 and also with PyPy 2 and PyPy 3.
@@ -249,21 +262,8 @@ field GF(2^p)
     inverse()
         Multiplicative inverse in GF(2^p)
 
-
-Examples
---------
->>> import rs
->>> coder = rs.RSCoder(20,13)
->>> c = coder.encode("Hello, world!")
->>> print repr(c)
-'Hello, world!\x8d\x13\xf4\xf9C\x10\xe5'
->>>
->>> r = "\0"*3 + c[3:]
->>> print repr(r)
-'\x00\x00\x00lo, world!\x8d\x13\xf4\xf9C\x10\xe5'
->>>
->>> coder.decode(r)
-'Hello, world!'
+Example implementations
+-----------------------
 
 Image Encoder
 ~~~~~~~~~~~~~
@@ -300,3 +300,11 @@ functionalities. The goal was to get a speedup, which is the case, but using PyP
 implementation provides a significantly higher speedup than the Cython implementation.
 The Cython implementations are still provided for the interested reader, but the casual user is
 not advised to use them. If you want to encode and decode fast, use PyPy.
+
+Authors and licence
+-------------------
+Written from scratch by Andrew Brown <brownan@gmail.com> <brownan@cs.duke.edu>
+(c) 2010.
+Upgraded by Stephen Larroque <LRQ3000@gmail.com> in 2015.
+
+Licensed under the MIT License.
