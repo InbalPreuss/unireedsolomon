@@ -1,7 +1,7 @@
 language: python
 python:
     - 2.7
-    # - 3.3 # problem with Travis, so dropping for the moment
+    # - 3.3 # problem with Travis, so dropping here but we setup a specific environment below
     - 3.4
     - 3.5
     - 3.6
@@ -41,6 +41,6 @@ matrix:
 #      dist: trusty
     - python: 3.3
       dist: trusty
-    - python: 3.7
-      dist: xenial
-      sudo: true
+#    - python: 3.7
+#      dist: xenial
+#      sudo: true
