@@ -33,3 +33,14 @@ notifications:
 #  allow_failures:
 #    - python: pypy
 #    - python: pypy3
+
+# Run these python versions with a specific distribution to ensure Travis can download and run them, from: https://github.com/travis-ci/travis-ci/issues/9133#issuecomment-531022359
+matrix:
+  include:
+#    - python: 3.2
+#      dist: trusty
+    - python: 3.3
+      dist: trusty
+    - python: 3.7
+      dist: xenial
+      sudo: true
