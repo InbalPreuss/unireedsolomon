@@ -43,7 +43,7 @@ Description
 -----------
 This library implements a pure-Python documented universal Reed-Solomon
 error correction codec with a mathematical nomenclatura, compatible with
-Python 2.6 up to 3.4 and also with PyPy 2 and PyPy 3.
+Python 2.7 up to 3.7+ and also with PyPy 2 and PyPy 3.
 
 The project aims to keep a well commented and organized code with
 an extensive documentation and mathematical clarity of the various
