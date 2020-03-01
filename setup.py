@@ -49,6 +49,7 @@ setup(
     #packages = ["unireedsolomon"],
     #py_modules = ["rs", 'polynomial', 'ff', '_compat'],
     long_description = open("README.rst", "r").read(),
+    long_description_content_type = "text/x-rst",
     classifiers = [
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: MIT License",
