@@ -1,21 +1,28 @@
-Documented Universal Errors-and-erasures Reed Solomon Codec written in pure Python
-==================================================================================
+UniReedSolomon
+==============
 
-.. image:: https://travis-ci.org/lrq3000/unireedsolomon.svg?branch=master
-    :target: https://travis-ci.org/lrq3000/unireedsolomon
+|PyPI-Status| |PyPI-Versions| |PyPI-Downloads|
 
-.. image:: https://coveralls.io/repos/lrq3000/unireedsolomon/badge.svg?branch=master&service=github
-  :target: https://coveralls.io/github/lrq3000/unireedsolomon?branch=master
+|Build-Status| |Coverage|
 
-.. image:: https://badge.fury.io/py/unireedsolomon.svg
-    :target: http://badge.fury.io/py/unireedsolomon
+UniReedSolomon is a pure-Python universal Reed-Solomon error correction codec with fully documented code and mathematical nomenclatura, compatible with Python 2.7 up to 3.7 and also PyPy 2 and 3.
 
-.. image:: https://img.shields.io/pypi/dm/unireedsolomon.svg
-    :target: https://pypi.python.org/pypi/unireedsolomon
+Compatible also with Python 3.8 but requires installing Cython even if not used (this will be fixed in the future).
 
-A pure-Python universal Reed-Solomon error correction codec with documented code and mathematical nomenclatura, compatible with Python 2.6 up to 3.4 and also PyPy 2 and 3.
+------------------------------------
 
-Compatible also with Python 3.7 and 3.8 but requires installing Cython even if not used (this will be fixed in the future).
+.. contents:: Table of contents
+   :backlinks: top
+   :local:
+
+
+Installation
+------------
+
+.. code:: sh
+
+    pip install --upgrade unireedsolomon
+
 
 Quickstart
 ----------
@@ -307,6 +314,19 @@ Authors and licence
 -------------------
 Written from scratch by Andrew Brown <brownan@gmail.com> <brownan@cs.duke.edu>
 (c) 2010.
-Upgraded by Stephen Larroque <LRQ3000@gmail.com> in 2015.
+
+Upgraded and maintained by Stephen Karl Larroque <LRQ3000@gmail.com> in 2015-2020.
 
 Licensed under the MIT License.
+
+
+.. |PyPI-Status| image:: https://img.shields.io/pypi/v/unireedsolomon.svg
+   :target: https://pypi.org/project/unireedsolomon
+.. |PyPI-Versions| image:: https://img.shields.io/pypi/pyversions/unireedsolomon.svg?logo=python&logoColor=white
+   :target: https://pypi.org/project/unireedsolomon
+.. |PyPI-Downloads| image:: https://img.shields.io/pypi/dm/unireedsolomon.svg?label=pypi%20downloads&logo=python&logoColor=white
+   :target: https://pypi.org/project/unireedsolomon
+.. |Build-Status| image:: https://travis-ci.org/lrq3000/unireedsolomon.svg?branch=master
+    :target: https://travis-ci.org/lrq3000/unireedsolomon
+.. |Coverage| image:: https://coveralls.io/repos/lrq3000/unireedsolomon/badge.svg?branch=master&service=github
+  :target: https://coveralls.io/github/lrq3000/unireedsolomon?branch=master
