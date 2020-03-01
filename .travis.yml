@@ -1,7 +1,7 @@
 language: python
 python:
     - 2.7
-    - 3.3
+    # - 3.3 # problem with Travis, so dropping for the moment
     - 3.4
     - 3.5
     - 3.6
