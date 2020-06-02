@@ -24,6 +24,7 @@ import os
 
 try:
     from Cython.Build import cythonize
+
     USE_CYTHON = True
 except ImportError:
     USE_CYTHON = False
@@ -31,26 +32,26 @@ except ImportError:
 ext = '.pyx' if USE_CYTHON else '.c'
 
 extensions = [
-                        Extension('unireedsolomon.cff', [os.path.join('unireedsolomon', 'cff'+ext)]),
-                        Extension('unireedsolomon.cpolynomial', [os.path.join('unireedsolomon', 'cpolynomial'+ext)]),
-                    ]
+    Extension('unireedsolomon.cff', [os.path.join('unireedsolomon', 'cff' + ext)]),
+    Extension('unireedsolomon.cpolynomial', [os.path.join('unireedsolomon', 'cpolynomial' + ext)]),
+]
 
 if USE_CYTHON: extensions = cythonize(extensions)
 
 setup(
-    name = "unireedsolomon",
-    version = "1.0.2",
-    description = "Universal errors-and-erasures Reed Solomon codec (error correcting code) in pure Python with extensive documentation",
-    author = "Andrew Brown, Stephen Larroque",
-    author_email = "lrq3000@gmail.com",
-    platforms = ["any"],
-    license = "MIT",
-    url = "https://github.com/lrq3000/unireedsolomon",
-    #packages = ["unireedsolomon"],
-    #py_modules = ["rs", 'polynomial', 'ff', '_compat'],
-    long_description = open("README.rst", "r").read(),
-    long_description_content_type = "text/x-rst",
-    classifiers = [
+    name="unireedsolomon",
+    version="1.0.2",
+    description="Universal errors-and-erasures Reed Solomon codec (error correcting code) in pure Python with extensive documentation",
+    author="Andrew Brown, Stephen Larroque",
+    author_email="lrq3000@gmail.com",
+    platforms=["any"],
+    license="MIT",
+    url="https://github.com/lrq3000/unireedsolomon",
+    # packages = ["unireedsolomon"],
+    # py_modules = ["rs", 'polynomial', 'ff', '_compat'],
+    long_description=open("README.rst", "r").read(),
+    long_description_content_type="text/x-rst",
+    classifiers=[
         "Development Status :: 5 - Production/Stable",
         "License :: OSI Approved :: MIT License",
         "Operating System :: Microsoft :: Windows",
@@ -70,10 +71,11 @@ setup(
         "Topic :: System :: Archiving :: Backup",
         "Topic :: System :: Recovery Tools",
     ],
-    keywords = 'error correction erasure reed solomon repair file network packet',
+    keywords='error correction erasure reed solomon repair file network packet',
 
-    ext_modules = extensions,
+    ext_modules=extensions,
     test_suite='nose.collector',
     tests_require=['nose'],
-    packages = find_packages(exclude=['build', 'docs', 'presentation'])
+    packages=find_packages(exclude=['build', 'docs', 'presentation']),
+    install_requires=['cython']
 )
