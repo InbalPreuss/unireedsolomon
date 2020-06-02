@@ -62,6 +62,18 @@ cdef array.array GF2int_logtable_a = array.array('i', [-1, 0, 25, 1, 50, 2, 26, 
             49, 254, 24, 13, 99, 140, 128, 192, 247, 112, 7])
 cdef int[::1] GF2int_logtable = GF2int_logtable_a
 
+def set_globals(GF2int_exptable_, GF2int_logtable_, GF2_charac_, GF2_c_exp_):
+    global GF2int_exptable, GF2int_logtable, GF2_charac, GF2_c_exp
+    GF2int_exptable = GF2int_exptable_
+    GF2int_logtable = GF2int_logtable_
+    GF2_charac = GF2_charac_
+    GF2_c_exp = GF2_c_exp_
+
+
+def get_globals():
+    return GF2int_exptable, GF2int_logtable, GF2_charac, GF2_c_exp
+
+
 def rwh_primes1(n):
     # http://stackoverflow.com/questions/2068372/fastest-way-to-list-all-primes-below-n-in-python/3035188#3035188
     ''' Returns  a list of primes < n '''
