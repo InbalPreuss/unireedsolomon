@@ -7,12 +7,8 @@
 
 from ._compat import _range, _str
 
-try: # Cython implementation import. This should be a bit faster than using PyPy with the pure-python implementation.
-    from .cff import GF2int, init_lut
-    from .cpolynomial import Polynomial
-except ImportError: # Else, we import the pure-python implementation (the reference, this should always work albeit more slowly).
-    from .ff import GF2int, init_lut
-    from .polynomial import Polynomial
+from .ff import GF2int, init_lut
+from .polynomial import Polynomial
 
 from operator import mul
 #import copy
