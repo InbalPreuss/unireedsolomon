@@ -14,6 +14,9 @@ except ImportError: # Else, we import the pure-python implementation (the refere
     from .ff import GF2int, init_lut
     from .polynomial import Polynomial
 
+from .ff import GF2int, init_lut
+from .polynomial import Polynomial
+
 from operator import mul
 #import copy
 #import array # avoid because PyPy has troubles! https://bitbucket.org/pypy/pypy/issue/1989/arrayarray-creation-5x-slower-than-cpython
